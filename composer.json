@@ -1,16 +1,25 @@
 {
-    "name": "guilhermegonzaga/presenter",
-    "description": "Implementation for Laravel 5 of the presenter design pattern.",
-    "keywords": ["laravel", "presenter", "view", "entity"],
+    "name": "padosoft/laravel-presenter",
+    "description": "Implementation for Laravel of the presenter design pattern.",
+    "keywords": [
+        "padosoft",
+        "laravel-presenter",
+        "presenter",
+        "present",
+        "view"
+    ],
+    "homepage": "https://github.com/padosoft/laravel-presenter",
     "license": "MIT",
     "authors": [
         {
-            "name": "Guilherme de Oliveira Gonzaga",
-            "email": "guilhermeoliveyra@hotmail.com"
+            "name": "Lorenzo Padovani",
+            "email": "helpdesk@padosoft.com",
+            "homepage": "https://www.padosoft.com",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
+        "php" : ">=5.6.0",
         "illuminate/support": "~5.0",
         "illuminate/database": "~5.0"
     },
@@ -22,8 +31,7 @@
             "Laracodes\\Presenter\\": "src/"
         }
     },
-    "suggest": {
-        "guilhermegonzaga/repository": "Repositories for Laravel 5 which is used to abstract the database layer."
-    },
-    "minimum-stability": "stable"
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
 }
