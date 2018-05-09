@@ -25,6 +25,6 @@ trait Presentable
             return $this->presenterInstance = new $this->presenter($this);
         }
 
-        throw new PresenterException('Property $presenter was not set correctly in '.get_class($this));
+        throw new PresenterException('Property $presenter was not set correctly in ' . get_class($this));
     }
 }
