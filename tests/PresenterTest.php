@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Support\Str;
 use Laracodes\Presenter\Presenter;
 use Laracodes\Presenter\Traits\Presentable;
 use Illuminate\Database\Eloquent\Model;
 
-class PresenterTest extends PHPUnit_Framework_TestCase
+class PresenterTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var Product
@@ -14,17 +15,9 @@ class PresenterTest extends PHPUnit_Framework_TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         $this->model = new Product();
-    }
-
-    /**
-     * @test
-     */
-    public function propertyModelExistsInPresenterClass()
-    {
-        $this->assertAttributeInstanceOf(Model::class, 'model', $this->model->present());
     }
 
     /**
@@ -98,7 +91,7 @@ class ProductPresenter extends Presenter
 
     public function shortName()
     {
-        return str_limit($this->name(), 7);
+        return Str::limit($this->name(), 7);
     }
 
     public function price()

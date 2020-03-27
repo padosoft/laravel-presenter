@@ -5,7 +5,7 @@ use Laracodes\Presenter\Presenter;
 use Laracodes\Presenter\Traits\Presentable;
 use Laracodes\Presenter\Exceptions\PresenterException;
 
-class PresentableTraitTest extends PHPUnit_Framework_TestCase
+class PresentableTraitTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var ModelExample
@@ -15,7 +15,7 @@ class PresentableTraitTest extends PHPUnit_Framework_TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->model = new ModelExample();
     }
@@ -27,7 +27,7 @@ class PresentableTraitTest extends PHPUnit_Framework_TestCase
     {
         $this->expectException(PresenterException::class);
 
-        $this->getMockObjectGenerator()->getObjectForTrait(Presentable::class)->present();
+        $this->getMockForTrait(Presentable::class)->present();
     }
 
     /**
@@ -55,11 +55,8 @@ class PresentableTraitTest extends PHPUnit_Framework_TestCase
      */
     public function checkPresenterInstanceValidValues()
     {
-        $this->assertAttributeEmpty('presenterInstance', $this->model);
-
-        $this->model->present();
-
-        $this->assertAttributeInstanceOf(Presenter::class, 'presenterInstance', $this->model);
+        $this->assertIsObject($this->model->present());
+        $this->assertTrue(is_a($this->model->present(),Presenter::class));
     }
 }
 
