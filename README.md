@@ -7,7 +7,6 @@ It causes the data to be displayed in a way understandable to humans.
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/padosoft/laravel-presenter.svg?style=flat-square)](https://packagist.org/packages/padosoft/laravel-presenter)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Quality Score](https://img.shields.io/scrutinizer/g/padosoft/laravel-presenter.svg?style=flat-square)](https://scrutinizer-ci.com/g/padosoft/laravel-presenter)
-[![Build Status](https://img.shields.io/travis/padosoft/laravel-presenter/master.svg?style=flat-square)](https://travis-ci.org/padosoft/laravel-presenter)
 [![Total Downloads](https://img.shields.io/packagist/dt/padosoft/laravel-presenter.svg?style=flat-square)](https://packagist.org/packages/padosoft/laravel-presenter)
 
 Table of Contents
@@ -28,8 +27,8 @@ Table of Contents
 ##Requires
   
 - "php" : ">=5.6.0",
-- "illuminate/support": "~5.0",
-- "illuminate/database": "~5.0"
+- "illuminate/support": "~5.0|^6.0|^7.0|^8.0|^9.0",
+- "illuminate/database": "~5.0|^6.0|^7.0|^8.0|^9.0"
 
 ## Installation
 
