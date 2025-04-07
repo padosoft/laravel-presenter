@@ -1,11 +1,13 @@
 <?php
+namespace Laracodes\Presenter\Test;
 
-use Illuminate\Database\Eloquent\Model;
 use Laracodes\Presenter\Presenter;
+use Laracodes\Presenter\Test\Classes\ModelExample;
 use Laracodes\Presenter\Traits\Presentable;
 use Laracodes\Presenter\Exceptions\PresenterException;
+use Orchestra\Testbench\TestCase as Orchestra;
 
-class PresentableTraitTest extends \PHPUnit\Framework\TestCase
+class PresentableTraitTest extends Orchestra
 {
     /**
      * @var ModelExample
@@ -58,16 +60,4 @@ class PresentableTraitTest extends \PHPUnit\Framework\TestCase
         $this->assertIsObject($this->model->present());
         $this->assertTrue(is_a($this->model->present(),Presenter::class));
     }
-}
-
-class ModelExample extends Model
-{
-    use Presentable;
-
-    protected $presenter = ModelPresenter::class;
-}
-
-class ModelPresenter extends Presenter
-{
-    //
 }

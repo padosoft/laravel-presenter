@@ -1,11 +1,10 @@
 <?php
+namespace Laracodes\Presenter\Test;
 
-use Illuminate\Support\Str;
-use Laracodes\Presenter\Presenter;
-use Laracodes\Presenter\Traits\Presentable;
-use Illuminate\Database\Eloquent\Model;
+use Laracodes\Presenter\Test\Classes\Product;
+use Orchestra\Testbench\TestCase as Orchestra;
 
-class PresenterTest extends \PHPUnit\Framework\TestCase
+class PresenterTest extends Orchestra
 {
     /**
      * @var Product
@@ -68,34 +67,4 @@ class PresenterTest extends \PHPUnit\Framework\TestCase
     }
 }
 
-class Product extends Model
-{
-    use Presentable;
 
-    protected $presenter = ProductPresenter::class;
-
-    protected $attributes = [
-        'name' => 'product 1',
-        'description' => 'description of product 1',
-        'price' => 9.90,
-        'property_test' => 'testing',
-    ];
-}
-
-class ProductPresenter extends Presenter
-{
-    public function name()
-    {
-        return ucfirst($this->model->name);
-    }
-
-    public function shortName()
-    {
-        return Str::limit($this->name(), 7);
-    }
-
-    public function price()
-    {
-        return '$'.$this->model->price;
-    }
-}
